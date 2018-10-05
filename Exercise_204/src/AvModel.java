@@ -32,6 +32,10 @@ public class AvModel extends AbstractTableModel {
         }
     }
 
+    public void update(int year) {
+
+    }
+
     @Override
     public int getRowCount() {
         return anlagen.size();
@@ -44,6 +48,12 @@ public class AvModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int i, int i1) {
+        Anlage a = anlagen.get(i);
+        return a;
+    }
+
+    @Override
+    public String getColumnName(int i) {
         return colNames[i];
     }
 

@@ -1,17 +1,16 @@
 
 import java.io.File;
 
-
 public class AvGUI extends javax.swing.JFrame {
 
     private AvModel model = new AvModel();
     private File f = new File("./anlagenverzeichnis.csv");
-    
+
     public AvGUI() {
         initComponents();
         table.setModel(model);
         table.setDefaultRenderer(Object.class, new CellRenderer());
-        
+
         try {
             model.load(f);
         } catch (Exception ex) {
@@ -19,7 +18,6 @@ public class AvGUI extends javax.swing.JFrame {
         }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -88,12 +86,11 @@ public class AvGUI extends javax.swing.JFrame {
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
         int year = (int) cbYear.getSelectedItem();
-        
-        model.update();
-        
+
+        model.update(year);
+
     }//GEN-LAST:event_btUpdateActionPerformed
 
-  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
