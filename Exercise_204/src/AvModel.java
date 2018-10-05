@@ -24,7 +24,8 @@ public class AvModel extends AbstractTableModel {
 
             while ((s = br.readLine()) != null) {
                 String[] split = s.split(";");
-                this.add(new Anlage(split[0], Double.parseDouble(split[1]), Double.parseDouble(split[2]), Double.parseDouble(split[3])));
+                anlagen.add(new Anlage(split[0], Double.parseDouble(split[1]), Double.parseDouble(split[2]), Double.parseDouble(split[3])));
+                fireTableDataChanged();
 
             }
 
