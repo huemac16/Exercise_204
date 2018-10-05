@@ -1,19 +1,19 @@
 public class Anlage {
     
-    private String Bezeichnung;
+    private String text;
     private double ak;
     private double year;
     private double duration;
 
-    public Anlage(String Bezeichnung, double ak, double year, double duration) {
-        this.Bezeichnung = Bezeichnung;
+    public Anlage(String text, double ak, double year, double duration) {
+        this.text = text;
         this.ak = ak;
         this.year = year;
         this.duration = duration;
     }
 
-    public String getBezeichnung() {
-        return Bezeichnung;
+    public String getText() {
+        return text;
     }
 
     public double getAk() {
@@ -28,8 +28,8 @@ public class Anlage {
         return duration;
     }
 
-    public void setBezeichnung(String Bezeichnung) {
-        this.Bezeichnung = Bezeichnung;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public void setAk(double ak) {
