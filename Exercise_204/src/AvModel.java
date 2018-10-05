@@ -19,6 +19,13 @@ public class AvModel extends AbstractTableModel {
 
     public void load(File f) {
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            br.readLine();
+            String s;
+
+            while ((s = br.readLine()) != null) {
+                String[] split = s.split(";");
+                
+            }
 
         } catch (Exception e) {
         }
