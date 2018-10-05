@@ -25,7 +25,7 @@ public class Anlage {
     }
     
     public double calcAfA(int y){
-        
+        return ak/duration;
     }
     
     public double calcBW(int y){
