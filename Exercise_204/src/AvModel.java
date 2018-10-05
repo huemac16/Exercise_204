@@ -1,21 +1,28 @@
 
+import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 public class AvModel extends AbstractTableModel {
 
+    private ArrayList<Anlage> anlagen = new ArrayList<>();
+
+    private static String[] colNames = {"Bezeichnung", "AK", "Inbetr.na...", "ND", "bish. ND",
+        "AfA bisher", "Wert vor ...", "AfA d. J.", "BW 31.12"};
+
     @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return anlagen.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 9;
     }
 
     @Override
     public Object getValueAt(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return colNames[i];
+
     }
 
 }
