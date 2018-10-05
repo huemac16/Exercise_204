@@ -44,7 +44,6 @@ public class AvModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int i, int i1) {
         return colNames[i];
-
     }
 
 }
