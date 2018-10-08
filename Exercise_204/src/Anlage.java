@@ -17,7 +17,7 @@ public class Anlage {
     }
     
     public double calcAfAUntilNow(int y){
-        return duration/calcDurUntilNow(y)*ak;
+        return calcDurUntilNow(y)/duration*ak;
     }
     
     public double calcValueBefore(int y){
@@ -29,6 +29,7 @@ public class Anlage {
     }
     
     public double calcBW(int y){
+        System.out.println("Calc: "+y);
         return calcValueBefore(y)-calcAfA(y);
     }
 
