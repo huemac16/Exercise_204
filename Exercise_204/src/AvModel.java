@@ -39,7 +39,7 @@ public class AvModel extends AbstractTableModel {
     }
 
     public void update() {
-        fireTableDataChanged();
+        fireTableCellUpdated(0, anlagen.size());
 
     }
 

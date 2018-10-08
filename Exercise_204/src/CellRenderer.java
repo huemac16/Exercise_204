@@ -9,6 +9,7 @@ public class CellRenderer implements TableCellRenderer {
 
     @Override
     public Component getTableCellRendererComponent(JTable jtable, Object o, boolean bln, boolean bln1, int i, int i1) {
+        
         Anlage a = (Anlage) o;
         JLabel label = new JLabel();
         label.setOpaque(true);
