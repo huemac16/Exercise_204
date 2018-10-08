@@ -1,0 +1,69 @@
+commit b5faaedcca8bf2b497a04ef9090390e6c1494b56
+Merge: d46bc24 8991c8a
+Author: huemac16 <huemac16@htl-kaindorf.at>
+Date:   Fri Oct 5 12:07:57 2018 +0200
+
+    Merge remote-tracking branch 'origin/dev02'
+
+commit d46bc24045d1ae64477f4f071f7b3652835800cb
+Merge: b41dc22 06e3118
+Author: egzon <kabegc16@htl-kaindorf.ac.at>
+Date:   Fri Oct 5 12:03:05 2018 +0200
+
+    Merge remote-tracking branch 'origin/dev01' into dev03
+
+commit b41dc22e27f897283c4b98fceaf7b9ec3b4a4ae8
+Merge: d698d4a 8b85cdf
+Author: egzon <kabegc16@htl-kaindorf.ac.at>
+Date:   Fri Oct 5 12:02:38 2018 +0200
+
+    Merge remote-tracking branch 'origin/dev02' into dev03
+
+commit 06e3118e574da36fffc4a77ed807bc56053d003e
+Author: huemac16 <huemac16@htl-kaindorf.at>
+Date:   Fri Oct 5 12:01:16 2018 +0200
+
+    implemented standart methods
+
+commit d698d4ad16a5704acd06899045cac2352739abb7
+Author: egzon <kabegc16@htl-kaindorf.ac.at>
+Date:   Fri Oct 5 11:57:10 2018 +0200
+
+    designed gui
+
+commit 8991c8a9c06840825ca4867dc97a0f37deeaf9b2
+Author: mroth19847 <rotmac16@htl-kaindorf.at>
+Date:   Fri Oct 5 11:56:01 2018 +0200
+
+    added attributes, constructor, getter and setter
+
+commit ac3f347116713a40d705f8a2b505fc52b16c1014
+Merge: 25bdf63 8b85cdf
+Author: huemac16 <huemac16@htl-kaindorf.at>
+Date:   Fri Oct 5 11:53:26 2018 +0200
+
+    Merge remote-tracking branch 'origin/dev02' into dev01
+
+commit 25bdf63fd7a4034cc388d96202c638034e1f6171
+Author: huemac16 <huemac16@htl-kaindorf.at>
+Date:   Fri Oct 5 11:52:52 2018 +0200
+
+    created model
+
+commit 8b85cdf33af8bc6a728e24c0ceef2c8fd9b2f89c
+Author: mroth19847 <rotmac16@htl-kaindorf.at>
+Date:   Fri Oct 5 11:52:24 2018 +0200
+
+    created class Anlage
+
+commit 53981894dce49a3cdac3c976f3dc7aae653e6ace
+Author: huemac16 <huemac16@htl-kaindorf.at>
+Date:   Fri Oct 5 11:46:11 2018 +0200
+
+    created new project
+
+commit 5f5df77bb85a41de5ad10649d6ff3d803ef257c5
+Author: huemac16 <43405901+huemac16@users.noreply.github.com>
+Date:   Fri Oct 5 11:40:33 2018 +0200
+
+    Initial commit
