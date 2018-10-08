@@ -6,6 +6,8 @@ public class AvGUI extends javax.swing.JFrame {
     private AvModel model = new AvModel();
     private File f = new File("./anlagenverzeichnis.csv");
 
+    public static int year = 2010;
+
     public AvGUI() {
         initComponents();
         table.setModel(model);
@@ -13,7 +15,6 @@ public class AvGUI extends javax.swing.JFrame {
 
         try {
             model.load(f);
-            System.out.println(model.listSize());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -86,9 +87,9 @@ public class AvGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
-        int year = (int) cbYear.getSelectedItem();
+        year = (int) cbYear.getSelectedItem();
 
-        model.update(year);
+        model.update();
 
     }//GEN-LAST:event_btUpdateActionPerformed
 

@@ -31,7 +31,6 @@ public class AvModel extends AbstractTableModel {
                 }
                 anlagen.add(new Anlage(split[0], Double.parseDouble(split[1]), util.getDouble(split[2]), util.getDouble(split[3])));
                 fireTableDataChanged();
-
             }
 
         } catch (Exception e) {
@@ -39,7 +38,8 @@ public class AvModel extends AbstractTableModel {
         }
     }
 
-    public void update(int year) {
+    public void update() {
+        fireTableDataChanged();
 
     }
 

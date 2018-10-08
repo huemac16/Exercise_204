@@ -28,6 +28,21 @@ public class CellRenderer implements TableCellRenderer {
             case 3:
                 label.setText("" + a.getDuration());
                 break;
+            case 4:
+                label.setText("" + a.calcDurUntilNow(AvGUI.year));
+                break;
+            case 5:
+                label.setText("" + a.calcAfAUntilNow(AvGUI.year));
+                break;
+            case 6:
+                label.setText("" + a.calcValueBefore(AvGUI.year));
+                break;
+            case 7:
+                label.setText("" + a.calcAfA(AvGUI.year));
+                break;
+            case 8:
+                label.setText("" + a.calcBW(AvGUI.year));
+                break;
 
         }
 
