@@ -13,7 +13,7 @@ public class AvGUI extends javax.swing.JFrame {
 
         try {
             model.load(f);
-            System.out.println("lol");
+            System.out.println(model.listSize());
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -8,6 +8,7 @@ import javax.swing.table.AbstractTableModel;
 public class AvModel extends AbstractTableModel {
 
     private ArrayList<Anlage> anlagen = new ArrayList<>();
+    private doubleUtil util = new doubleUtil();
 
     private static String[] colNames = {"Bezeichnung", "AK", "Inbetr.na...", "ND", "bish. ND",
         "AfA bisher", "Wert vor ...", "AfA d. J.", "BW 31.12"};
@@ -24,12 +25,17 @@ public class AvModel extends AbstractTableModel {
 
             while ((s = br.readLine()) != null) {
                 String[] split = s.split(";");
-                anlagen.add(new Anlage(split[0], Double.parseDouble(split[1]), Double.parseDouble(split[2]), Double.parseDouble(split[3])));
+                if (split[1].contains(".")) {
+                    split[1] = split[1].replace(".", "");
+
+                }
+                anlagen.add(new Anlage(split[0], Double.parseDouble(split[1]), util.getDouble(split[2]), util.getDouble(split[3])));
                 fireTableDataChanged();
 
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -56,6 +62,10 @@ public class AvModel extends AbstractTableModel {
     @Override
     public String getColumnName(int i) {
         return colNames[i];
+    }
+
+    public int listSize() {
+        return anlagen.size();
     }
 
 }
