@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -71,7 +72,11 @@ public class CellRenderer implements TableCellRenderer {
                 case 8:
                     label.setText(getFormattedStr(df.format(a.getSumBw())));
                     break;
+
             }
+
+            label.setFont(new Font("Courier New", Font.BOLD, 13));
+
         }
 
         if (i1 == 0) {
