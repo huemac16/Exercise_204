@@ -51,6 +51,8 @@ public class CellRenderer implements TableCellRenderer {
         }
         if(AvGUI.year<a.getYear()){
             label.setBackground(bln ? new Color(150, 150, 150) : Color.ORANGE);
+        } else if (AvGUI.year>a.getYear()+a.getDuration()){
+            label.setBackground(bln ? new Color(150, 150, 150) : Color.YELLOW);
         } else {
             label.setBackground(bln ? new Color(150, 150, 150) : new Color(240, 240, 240));
         }
