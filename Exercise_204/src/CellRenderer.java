@@ -59,6 +59,7 @@ public class CellRenderer implements TableCellRenderer {
         }
 
         return label;
+
     }
 
     private String getFormattedStr(String str) {
