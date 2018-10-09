@@ -49,7 +49,7 @@ public class AvModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 9;
+        return colNames.length;
     }
 
     @Override

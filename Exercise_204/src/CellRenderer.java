@@ -5,7 +5,9 @@ import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
+import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 public class CellRenderer implements TableCellRenderer {
 
@@ -19,38 +21,53 @@ public class CellRenderer implements TableCellRenderer {
         label.setForeground(Color.BLACK);
         String formatPattern = "###,###.##";
         DecimalFormat df = new DecimalFormat(formatPattern);
+
         switch (i1) {
             case 0:
                 label.setText(a.getText());
                 break;
             case 1:
-                label.setText(df.format(a.getAk()));
+                label.setText(getFormattedStr(df.format(a.getAk())));
                 break;
             case 2:
-                label.setText(df.format(a.getYear()));
+                label.setText("" + a.getYear());
                 break;
             case 3:
                 label.setText(df.format(a.getDuration()));
                 break;
             case 4:
-                label.setText(df.format(a.calcDurUntilNow(AvGUI.year)));
+                label.setText(getFormattedStr(df.format(a.calcDurUntilNow(AvGUI.year))));
                 break;
             case 5:
-                label.setText(df.format(a.calcAfAUntilNow(AvGUI.year)));
+                label.setText(getFormattedStr(df.format(a.calcAfAUntilNow(AvGUI.year))));
                 break;
             case 6:
-                label.setText(df.format(a.calcValueBefore(AvGUI.year)));
+                label.setText(getFormattedStr(df.format(a.calcValueBefore(AvGUI.year))));
                 break;
             case 7:
-                label.setText(df.format(a.calcAfA(AvGUI.year)));
+                label.setText(getFormattedStr(df.format(a.calcAfA(AvGUI.year))));
                 break;
             case 8:
-                label.setText(df.format(a.calcBW(AvGUI.year)));
+                label.setText(getFormattedStr(df.format(a.calcBW(AvGUI.year))));
                 break;
 
         }
-        label.setHorizontalAlignment(SwingConstants.RIGHT);
+        if (i1 == 0) {
+            label.setHorizontalAlignment(SwingConstants.LEFT);
+        } else {
+            label.setHorizontalAlignment(SwingConstants.RIGHT);
+        }
+
         return label;
+    }
+
+    private String getFormattedStr(String str) {
+        if (!str.contains((","))) {
+            return str + ",00";
+        } else if (str.split(",")[1].length() < 2) {
+            return str += "0";
+        }
+        return str;
     }
 
 }

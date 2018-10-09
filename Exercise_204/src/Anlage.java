@@ -14,6 +14,12 @@ public class Anlage {
     }
 
     public double calcDurUntilNow(int y) {
+        if ((double) y - year < 0) {
+            return duration;
+        }
+        if (y - year >= duration) {
+            return duration;
+        }
         return (double) y - year;
     }
 
@@ -22,15 +28,26 @@ public class Anlage {
     }
 
     public double calcValueBefore(int y) {
-        return ak - calcAfAUntilNow(y);
+        double afaUN = calcAfAUntilNow(y);
+        if (ak - afaUN < 0) {
+            return 0;
+        }
+        return ak - afaUN;
     }
 
     public double calcAfA(int y) {
+        if (calcValueBefore(y) == 0) {
+            return 0;
+        }
         return ak / duration;
     }
 
     public double calcBW(int y) {
-        return calcValueBefore(y) - calcAfA(y);
+        double v = calcValueBefore(y), a = calcAfA(y);
+        if (v - a < 0) {
+            return 0;
+        }
+        return v - a;
     }
 
     public String getText() {
