@@ -32,6 +32,7 @@ public class AvModel extends AbstractTableModel {
                 anlagen.add(new Anlage(split[0], Double.parseDouble(split[1]), util.getDouble(split[2]), util.getDouble(split[3])));
                 fireTableDataChanged();
             }
+            calcSum();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,6 +66,24 @@ public class AvModel extends AbstractTableModel {
 
     public int listSize() {
         return anlagen.size();
+    }
+
+    public void calcSum() {
+        double sumAK = 0;
+        double sumAfaBisher = 0;
+        double sumWertVorAfa = 0;
+        double sumAfaDj = 0;
+        double sumBw = 0;
+        for (int i = 0; i < anlagen.size(); i++) {
+            sumAK += anlagen.get(i).getAk();
+            sumAfaBisher += anlagen.get(i).calcAfAUntilNow(AvGUI.year);
+            sumWertVorAfa += anlagen.get(i).calcValueBefore(AvGUI.year);
+            sumAfaDj += anlagen.get(i).calcAfA(AvGUI.year);
+            sumBw += anlagen.get(i).calcBW(AvGUI.year);
+
+        }
+
+        anlagen.add(new Anlage(sumAK, sumAfaBisher, sumWertVorAfa, sumAfaDj, sumBw));
     }
 
 }
