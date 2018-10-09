@@ -5,9 +5,7 @@ import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
-import sun.swing.table.DefaultTableCellHeaderRenderer;
 
 public class CellRenderer implements TableCellRenderer {
 
@@ -17,7 +15,6 @@ public class CellRenderer implements TableCellRenderer {
         Anlage a = (Anlage) o;
         JLabel label = new JLabel();
         label.setOpaque(true);
-        label.setBackground(bln ? new Color(150, 150, 150) : new Color(240, 240, 240));
         label.setForeground(Color.BLACK);
         String formatPattern = "###,###.##";
         DecimalFormat df = new DecimalFormat(formatPattern);
@@ -52,12 +49,16 @@ public class CellRenderer implements TableCellRenderer {
                 break;
 
         }
+        if(AvGUI.year<a.getYear()){
+            label.setBackground(bln ? new Color(150, 150, 150) : Color.ORANGE);
+        } else {
+            label.setBackground(bln ? new Color(150, 150, 150) : new Color(240, 240, 240));
+        }
         if (i1 == 0) {
             label.setHorizontalAlignment(SwingConstants.LEFT);
         } else {
             label.setHorizontalAlignment(SwingConstants.RIGHT);
         }
-
         return label;
     }
 
