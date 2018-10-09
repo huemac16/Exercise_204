@@ -1,5 +1,6 @@
+
 public class Anlage {
-    
+
     private String text;
     private double ak;
     private double year;
@@ -11,26 +12,25 @@ public class Anlage {
         this.year = year;
         this.duration = duration;
     }
-    
-    public double calcDurUntilNow(int y){
+
+    public double calcDurUntilNow(int y) {
         return (double) y - year;
     }
-    
-    public double calcAfAUntilNow(int y){
-        return calcDurUntilNow(y)/duration*ak;
+
+    public double calcAfAUntilNow(int y) {
+        return calcDurUntilNow(y) / duration * ak;
     }
-    
-    public double calcValueBefore(int y){
-        return ak-calcAfAUntilNow(y);
+
+    public double calcValueBefore(int y) {
+        return ak - calcAfAUntilNow(y);
     }
-    
-    public double calcAfA(int y){
-        return ak/duration;
+
+    public double calcAfA(int y) {
+        return ak / duration;
     }
-    
-    public double calcBW(int y){
-        System.out.println("Calc: "+y);
-        return calcValueBefore(y)-calcAfA(y);
+
+    public double calcBW(int y) {
+        return calcValueBefore(y) - calcAfA(y);
     }
 
     public String getText() {
@@ -64,5 +64,5 @@ public class Anlage {
     public void setDuration(double duration) {
         this.duration = duration;
     }
-    
+
 }

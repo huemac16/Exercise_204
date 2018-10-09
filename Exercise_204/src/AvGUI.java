@@ -6,7 +6,7 @@ public class AvGUI extends javax.swing.JFrame {
     private AvModel model = new AvModel();
     private File f = new File("./anlagenverzeichnis.csv");
 
-    public static int year = 2016;
+    public static int year = 2010;
 
     public AvGUI() {
         initComponents();
