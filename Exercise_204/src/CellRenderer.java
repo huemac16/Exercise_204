@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.text.DecimalFormat;
+import javafx.scene.layout.Border;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
@@ -70,23 +71,29 @@ public class CellRenderer implements TableCellRenderer {
             switch (i1) {
                 case 1:
                     label.setText(getFormattedStr(df.format(a.getSumAK())));
+                    label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                     break;
                 case 5:
                     label.setText(getFormattedStr(df.format(a.getSumAfaBisher())));
+                    label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                     break;
                 case 6:
                     label.setText(getFormattedStr(df.format(a.getSumWertVorAfa())));
+                    label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                     break;
                 case 7:
                     label.setText(getFormattedStr(df.format(a.getSumAfaDj())));
+                    label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                     break;
                 case 8:
                     label.setText(getFormattedStr(df.format(a.getSumBw())));
+                    label.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
                     break;
 
             }
 
             label.setFont(new Font("Courier New", Font.BOLD, 13));
+            label.setBackground(bln ? new Color(150, 150, 150) : Color.GREEN);
 
         }
 

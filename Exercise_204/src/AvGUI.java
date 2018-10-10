@@ -39,6 +39,7 @@ public class AvGUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Anlagenverzeichnis");
         setResizable(false);
 
         lbYear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
