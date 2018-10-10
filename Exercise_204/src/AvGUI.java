@@ -13,6 +13,10 @@ public class AvGUI extends javax.swing.JFrame {
         table.setModel(model);
         table.setDefaultRenderer(Object.class, new CellRenderer());
 
+        for (int i = 2010; i < 2061; i++) {
+            cbYear.addItem("" + i);
+        }
+
         try {
             model.load(f);
         } catch (Exception ex) {
@@ -39,8 +43,6 @@ public class AvGUI extends javax.swing.JFrame {
 
         lbYear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbYear.setText("Year");
-
-        cbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" }));
 
         btUpdate.setText("Update Table");
         btUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +129,6 @@ public class AvGUI extends javax.swing.JFrame {
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
         year = Integer.parseInt(cbYear.getSelectedItem().toString());
-        //table.setDefaultRenderer(Object.class, new CellRenderer());
         model.update();
     }//GEN-LAST:event_btUpdateActionPerformed
 
