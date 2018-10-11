@@ -16,7 +16,8 @@ public class AvModel extends AbstractTableModel {
         "AfA bisher", "Wert vor ...", "AfA d. J.", "BW 31.12"};
 
     public void add(Anlage a) {
-        anlagen.add(a);
+
+        anlagen.add(anlagen.size() - 2, a);
         fireTableRowsInserted(anlagen.size() - 1, anlagen.size() - 1);
     }
 
@@ -48,7 +49,7 @@ public class AvModel extends AbstractTableModel {
             bw.newLine();
 
             for (int i = 0; i < anlagen.size(); i++) {
-                bw.write(String.format("%s,%f,%f,%f", anlagen.get(i).getText(), anlagen.get(i).getAk(),
+                bw.write(String.format("%s;%f;%f;%f", anlagen.get(i).getText(), anlagen.get(i).getAk(),
                         anlagen.get(i).getYear(), anlagen.get(i).getDuration()));
                 bw.newLine();
             }

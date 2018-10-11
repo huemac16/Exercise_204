@@ -41,6 +41,11 @@ public class AvGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Anlagenverzeichnis");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         lbYear.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbYear.setText("Year");
@@ -132,6 +137,10 @@ public class AvGUI extends javax.swing.JFrame {
         year = Integer.parseInt(cbYear.getSelectedItem().toString());
         model.update();
     }//GEN-LAST:event_btUpdateActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        model.save(f);
+    }//GEN-LAST:event_formWindowClosing
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
