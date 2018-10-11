@@ -6,11 +6,29 @@ public class Anlage {
     private double year;
     private double duration;
 
+    private double sumAK;
+    private double sumAfaBisher;
+    private double sumWertVorAfa;
+    private double sumAfaDj;
+    private double sumBw;
+
+    private boolean last = false;
+
     public Anlage(String text, double ak, double year, double duration) {
         this.text = text;
         this.ak = ak;
         this.year = year;
         this.duration = duration;
+        last = false;
+    }
+
+    public Anlage(double sumAK, double sumAfaBisher, double sumWertVorAfa, double sumAfaDj, double sumBw) {
+        this.sumAK = sumAK;
+        this.sumAfaBisher = sumAfaBisher;
+        this.sumWertVorAfa = sumWertVorAfa;
+        this.sumAfaDj = sumAfaDj;
+        this.sumBw = sumBw;
+        last = true;
     }
 
     public double calcDurUntilNow(int y) {
@@ -81,5 +99,51 @@ public class Anlage {
     public void setDuration(double duration) {
         this.duration = duration;
     }
+
+    public double getSumAK() {
+        return sumAK;
+    }
+
+    public double getSumAfaBisher() {
+        return sumAfaBisher;
+    }
+
+    public double getSumWertVorAfa() {
+        return sumWertVorAfa;
+    }
+
+    public double getSumAfaDj() {
+        return sumAfaDj;
+    }
+
+    public double getSumBw() {
+        return sumBw;
+    }
+
+    public void setSumAK(double sumAK) {
+        this.sumAK = sumAK;
+    }
+
+    public void setSumAfaBisher(double sumAfaBisher) {
+        this.sumAfaBisher = sumAfaBisher;
+    }
+
+    public void setSumWertVorAfa(double sumWertVorAfa) {
+        this.sumWertVorAfa = sumWertVorAfa;
+    }
+
+    public void setSumAfaDj(double sumAfaDj) {
+        this.sumAfaDj = sumAfaDj;
+    }
+
+    public void setSumBw(double sumBw) {
+        this.sumBw = sumBw;
+    }
+
+    public boolean isLast() {
+        return last;
+    }
+    
+    
 
 }
