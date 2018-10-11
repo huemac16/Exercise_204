@@ -17,7 +17,10 @@ public class CellRenderer implements TableCellRenderer {
         Anlage a = (Anlage) o;
         JLabel label = new JLabel();
         label.setOpaque(true);
-        label.setBackground(bln ? new Color(150, 150, 150) : new Color(240, 240, 240));
+        if (!a.isLast()) {
+            label.setBackground(bln ? new Color(150, 150, 150) : new Color(240, 240, 240));
+        }
+
         label.setForeground(Color.BLACK);
         String formatPattern = "###,###.##";
         DecimalFormat df = new DecimalFormat(formatPattern);
@@ -93,7 +96,7 @@ public class CellRenderer implements TableCellRenderer {
             }
 
             label.setFont(new Font("Courier New", Font.BOLD, 13));
-            label.setBackground(bln ? new Color(150, 150, 150) : Color.GREEN);
+            label.setBackground(Color.GREEN);
 
         }
 
