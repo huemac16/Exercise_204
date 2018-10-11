@@ -17,7 +17,7 @@ public class AvModel extends AbstractTableModel {
 
     public void add(Anlage a) {
 
-        anlagen.add(anlagen.size() - 2, a);
+        anlagen.add(anlagen.size() - 1, a);
         fireTableRowsInserted(anlagen.size() - 1, anlagen.size() - 1);
     }
 
