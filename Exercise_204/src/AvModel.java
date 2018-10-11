@@ -1,7 +1,9 @@
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -40,7 +42,22 @@ public class AvModel extends AbstractTableModel {
     }
 
     public void save(File f) {
-      
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
+            bw.write("");
+            bw.write("Bezeichnung;AK;Inbetr.nahme;ND");
+            bw.newLine();
+
+            for (int i = 0; i < anlagen.size(); i++) {
+                bw.write(String.format("%s,%f,%f,%f", anlagen.get(i).getText(), anlagen.get(i).getAk(),
+                        anlagen.get(i).getYear(), anlagen.get(i).getDuration()));
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void update() {
