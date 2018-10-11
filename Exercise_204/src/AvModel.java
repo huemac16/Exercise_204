@@ -39,6 +39,10 @@ public class AvModel extends AbstractTableModel {
         }
     }
 
+    public void save(File f) {
+      
+    }
+
     public void update() {
         anlagen.remove(anlagen.size() - 1);
         calcSum();
